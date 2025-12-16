@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mi Sitio Bootstrap Responsivo</title>
+
+    <!-- Bootstrap 5 (CSS) -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <!-- HEADER + NAVBAR -->
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
+        <div class="container">
+          <a class="navbar-brand fw-semibold" href="#inicio">MiSitio</a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#menuPrincipal"
+            aria-controls="menuPrincipal"
+            aria-expanded="false"
+            aria-label="Abrir navegación"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="menuPrincipal">
+            <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#inicio">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#servicios">Sección</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contacto">Contacto</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- TÍTULO PRINCIPAL (H1) -->
+      <section id="inicio" class="hero">
+        <div class="container py-5">
+          <div class="row align-items-center g-4">
+            <div class="col-lg-7">
+              <h1 class="display-5 fw-bold hero-title">
+                Página moderna con CSS3 avanzado + Bootstrap 5
+              </h1>
+              <p class="lead hero-subtitle">
+                Grid responsivo, Cards, Navbar, Formulario, animaciones, transiciones y un
+                componente <strong>Collapse</strong> para contenido interactivo.
+              </p>
+
+              <div class="d-flex gap-2 flex-wrap">
+                <a class="btn btn-primary btn-lg" href="#servicios">Ver sección</a>
+
+                <!-- BOTÓN + COLLAPSE -->
+                <button
+                  class="btn btn-outline-light btn-lg"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#masInfo"
+                  aria-expanded="false"
+                  aria-controls="masInfo"
+                >
+                  Mostrar / Ocultar info
+                </button>
+              </div>
+
+              <div class="collapse mt-4" id="masInfo">
+                <div class="glass-card p-3 p-md-4">
+                  <h2 class="h5 mb-2">Contenido con Collapse (Bootstrap)</h2>
+                  <p class="mb-0">
+                    Este bloque se muestra/oculta usando <code>collapse</code> de Bootstrap 5.
+                    La transición es suave y el diseño se adapta a móvil, tablet y escritorio.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-5">
+              <div class="hero-card p-3 p-md-4">
+                <h2 class="h5 mb-2">Detalles rápidos</h2>
+                <ul class="mb-0">
+                  <li>Navbar responsiva (expand-md)</li>
+                  <li>Grid de 3 columnas (col-md-4)</li>
+                  <li>Cards con hover y sombra</li>
+                  <li>Formulario responsivo</li>
+                  <li>Media query propia</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <!-- MAIN -->
+    <main class="py-5">
+      <!-- SECCIÓN PRINCIPAL CON GRID (3 columnas col-md-4) -->
+      <section id="servicios" class="container">
+        <div class="section-title mb-4">
+          <h2 class="fw-bold mb-1">Sección principal</h2>
+          <p class="text-muted mb-0">
+            Grid de Bootstrap con 3 columnas (cada una en <code>col-md-4</code>) y Cards.
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Card 1 -->
+          <div class="col-12 col-md-4">
+            <article class="card h-100 card-hover">
+              <img
+                src="assets/img/imagen1.jpg"
+                class="card-img-top img-fluid"
+                alt="Imagen representativa 1"
+              />
+              <div class="card-body">
+                <h3 class="h5 card-title">Diseño responsivo</h3>
+                <p class="card-text">
+                  Adaptación fluida con el sistema Grid/Flex de Bootstrap y media queries
+                  personalizadas.
+                </p>
+              </div>
+              <div class="card-footer bg-transparent border-0 pt-0 pb-3 px-3">
+                <button class="btn btn-primary w-100">Acción</button>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="col-12 col-md-4">
+            <article class="card h-100 card-hover">
+              <img
+                src="assets/img/imagen2.jpg"
+                class="card-img-top img-fluid"
+                alt="Imagen representativa 2"
+              />
+              <div class="card-body">
+                <h3 class="h5 card-title">CSS3 avanzado</h3>
+                <p class="card-text">
+                  Transiciones, transformaciones, sombras, bordes redondeados y animaciones
+                  para una UI moderna.
+                </p>
+              </div>
+              <div class="card-footer bg-transparent border-0 pt-0 pb-3 px-3">
+                <button class="btn btn-primary w-100">Acción</button>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="col-12 col-md-4">
+            <article class="card h-100 card-hover">
+              <img
+                src="assets/img/imagen3.jpg"
+                class="card-img-top img-fluid"
+                alt="Imagen representativa 3"
+              />
+              <div class="card-body">
+                <h3 class="h5 card-title">Componentes Bootstrap</h3>
+                <p class="card-text">
+                  Navbar, botones, cards, collapse y form con estilos personalizados desde
+                  un CSS externo.
+                </p>
+              </div>
+              <div class="card-footer bg-transparent border-0 pt-0 pb-3 px-3">
+                <button class="btn btn-primary w-100">Acción</button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- FORMULARIO RESPONSIVO -->
+      <section id="contacto" class="container mt-5">
+        <div class="section-title mb-4">
+          <h2 class="fw-bold mb-1">Formulario de contacto</h2>
+          <p class="text-muted mb-0">Campos: Nombre, Email, Comentarios y botón de envío.</p>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-8">
+            <form class="p-4 p-md-5 form-box">
+              <div class="mb-3 form-group">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nombre"
+                  placeholder="Tu nombre completo"
+                  required
+                />
+              </div>
+
+              <div class="mb-3 form-group">
+                <label for="email" class="form-label">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="tucorreo@ejemplo.com"
+                  required
+                />
+              </div>
+
+              <div class="mb-4 form-group">
+                <label for="comentarios" class="form-label">Comentarios</label>
+                <textarea
+                  class="form-control"
+                  id="comentarios"
+                  rows="4"
+                  placeholder="Escribe tu mensaje..."
+                  required
+                ></textarea>
+              </div>
+
+              <div class="d-flex gap-2 flex-wrap">
+                <button type="submit" class="btn btn-primary btn-lg">
+                  Enviar
+                </button>
+                <button type="reset" class="btn btn-outline-secondary btn-lg">
+                  Limpiar
+                </button>
+              </div>
+
+              <p class="text-muted small mt-3 mb-0">
+                *Formulario de demostración (no envía datos a servidor).
+              </p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="text-center bg-light py-4 mt-5 border-top">
+      <div class="container">
+        <p class="mb-2">© 2025 - Mi Sitio Bootstrap | Proyecto Responsivo</p>
+        <div class="d-flex justify-content-center gap-3 flex-wrap">
+          <a class="footer-link" href="#">Política de privacidad</a>
+          <a class="footer-link" href="#">Términos</a>
+          <a class="footer-link" href="#">Contacto</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap 5 (JS Bundle: incluye Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
