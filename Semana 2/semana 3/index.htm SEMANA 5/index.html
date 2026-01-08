@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galería Interactiva</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header class="container header">
+    <h1>Galería Interactiva</h1>
+    <p class="subtitle">Agrega por URL, selecciona con clic y elimina la seleccionada.</p>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <h2>Controles</h2>
+
+      <label class="label" for="imageUrl">URL de la imagen</label>
+      <div class="row">
+        <input
+          id="imageUrl"
+          type="url"
+          placeholder="https://ejemplo.com/imagen.jpg"
+          autocomplete="off"
+          inputmode="url"
+        />
+        <button id="addBtn" class="btn primary" type="button">Agregar Imagen</button>
+      </div>
+
+      <div class="row row-actions">
+        <button id="deleteBtn" class="btn danger" type="button" disabled>
+          Eliminar Imagen Seleccionada
+        </button>
+        <button id="clearSelectionBtn" class="btn" type="button" disabled>
+          Quitar Selección
+        </button>
+      </div>
+
+      <p class="help">
+        Atajos: <strong>Ctrl+Enter</strong> agrega · <strong>Del</strong> elimina ·
+        <strong>Esc</strong> quita selección · <strong>Ctrl+L</strong> enfoca el input
+      </p>
+
+      <p id="statusText" class="status" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="panel">
+      <div class="gallery-header">
+        <h2>Galería</h2>
+        <span id="counter" class="counter">0 imágenes</span>
+      </div>
+
+      <div id="gallery" class="gallery" aria-label="Galería de imágenes"></div>
+    </section>
+  </main>
+
+  <footer class="container footer">
+    <small>Semana 5 · DOM y Eventos con JavaScript · GitHub Pages</small>
+  </footer>
+</body>
+</html>
