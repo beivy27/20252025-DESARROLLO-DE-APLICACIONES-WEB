@@ -1,0 +1,134 @@
+:root{
+  --bg: #f4f6fb;
+  --card: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --border: #d1d5db;
+
+  --ok: #16a34a;
+  --bad: #dc2626;
+
+  --shadow: 0 12px 30px rgba(0,0,0,.08);
+  --radius: 14px;
+}
+
+*{ box-sizing: border-box; }
+body{
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.container{
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.card{
+  width: min(560px, 100%);
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 22px;
+  border: 1px solid rgba(0,0,0,.04);
+}
+
+h1{
+  margin: 0 0 6px;
+  font-size: 1.6rem;
+}
+
+.subtitle{
+  margin: 0 0 18px;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.field{
+  margin-bottom: 14px;
+  display: grid;
+  gap: 6px;
+}
+
+label{
+  font-weight: 600;
+}
+
+input{
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  outline: none;
+  font-size: 1rem;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+
+input:focus{
+  box-shadow: 0 0 0 3px rgba(59,130,246,.20);
+  border-color: rgba(59,130,246,.65);
+}
+
+.hint{
+  color: var(--muted);
+  font-size: .85rem;
+}
+
+.error{
+  min-height: 18px;
+  font-size: .88rem;
+  color: var(--bad);
+}
+
+.is-valid{
+  border-color: rgba(22,163,74,.75) !important;
+  box-shadow: 0 0 0 3px rgba(22,163,74,.12);
+}
+
+.is-invalid{
+  border-color: rgba(220,38,38,.75) !important;
+  box-shadow: 0 0 0 3px rgba(220,38,38,.12);
+}
+
+.actions{
+  margin-top: 14px;
+  display: flex;
+  gap: 10px;
+}
+
+button{
+  flex: 1;
+  padding: 12px 14px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: transform .08s ease, opacity .15s ease;
+}
+
+button:active{ transform: scale(.98); }
+
+#btnEnviar{
+  background: #2563eb;
+  color: white;
+}
+
+#btnEnviar:disabled{
+  opacity: .55;
+  cursor: not-allowed;
+}
+
+.secondary{
+  background: #e5e7eb;
+  color: #111827;
+}
+
+.status{
+  margin: 14px 0 0;
+  color: var(--ok);
+  font-weight: 600;
+  min-height: 20px;
+}
