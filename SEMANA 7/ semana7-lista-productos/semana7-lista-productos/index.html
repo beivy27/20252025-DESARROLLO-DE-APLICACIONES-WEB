@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Semana 7 - Lista de Productos</title>
+</head>
+<body>
+  <h1>Lista de productos</h1>
+  <p>Contenido renderizado dinámicamente con JavaScript.</p>
+
+  <button id="addProductBtn" type="button">Agregar producto</button>
+
+  <ul id="productList"></ul>
+
+  <!-- Plantilla (template) para cada producto -->
+  <template id="productTemplate">
+    <li>
+      <h3 data-name></h3>
+      <p><strong>Precio:</strong> <span data-price></span></p>
+      <p data-desc></p>
+      <hr />
+    </li>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
