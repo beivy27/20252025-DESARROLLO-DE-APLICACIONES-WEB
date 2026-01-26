@@ -1,0 +1,8 @@
+/* Semana 8 - estilos básicos */
+body {
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 900px;
+}
