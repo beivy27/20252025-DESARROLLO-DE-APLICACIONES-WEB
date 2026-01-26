@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Semana 8 - Bootstrap + JS</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-light">
+
+  <!-- NAV -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Semana 8</a>
+      <span class="navbar-text text-white-50">Bootstrap + JavaScript</span>
+    </div>
+  </nav>
+
+  <main class="container py-4">
+    <!-- Alertas -->
+    <div id="alertPlaceholder"></div>
+
+    <div class="row g-4">
+      <!-- FORM -->
+      <div class="col-12 col-lg-7">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h2 class="h5 mb-3">Formulario con validación</h2>
+
+            <form id="registroForm" class="needs-validation" novalidate>
+              <div class="mb-3">
+                <label class="form-label" for="nombre">Nombre</label>
+                <input class="form-control" id="nombre" type="text" required minlength="3" placeholder="Ej: Beivy Rivera">
+                <div class="invalid-feedback">Ingresa un nombre (mínimo 3 caracteres).</div>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label" for="email">Correo</label>
+                <input class="form-control" id="email" type="email" required placeholder="ejemplo@correo.com">
+                <div class="invalid-feedback">Ingresa un correo válido.</div>
+              </div>
+
+              <div class="row g-3">
+                <div class="col-12 col-md-6">
+                  <label class="form-label" for="edad">Edad</label>
+                  <input class="form-control" id="edad" type="number" required min="18" max="99" placeholder="18">
+                  <div class="invalid-feedback">Debes tener entre 18 y 99 años.</div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <label class="form-label" for="pais">País</label>
+                  <select class="form-select" id="pais" required>
+                    <option value="" selected disabled>Selecciona…</option>
+                    <option value="Ecuador">Ecuador</option>
+                    <option value="Colombia">Colombia</option>
+                    <option value="Perú">Perú</option>
+                    <option value="Otro">Otro</option>
+                  </select>
+                  <div class="invalid-feedback">Selecciona un país.</div>
+                </div>
+              </div>
+
+              <hr class="my-4">
+
+              <div class="row g-3">
+                <div class="col-12 col-md-6">
+                  <label class="form-label" for="pass">Contraseña</label>
+                  <input class="form-control" id="pass" type="password" required minlength="6" placeholder="Mínimo 6">
+                  <div class="invalid-feedback">La contraseña debe tener mínimo 6 caracteres.</div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <label class="form-label" for="pass2">Confirmar contraseña</label>
+                  <input class="form-control" id="pass2" type="password" required minlength="6" placeholder="Repite la contraseña">
+                  <div class="invalid-feedback">Las contraseñas deben coincidir.</div>
+                </div>
+              </div>
+
+              <div class="form-check mt-3">
+                <input class="form-check-input" id="terminos" type="checkbox" required>
+                <label class="form-check-label" for="terminos">
+                  Acepto términos y condiciones
+                </label>
+                <div class="invalid-feedback">Debes aceptar los términos.</div>
+              </div>
+
+              <div class="d-flex gap-2 mt-4">
+                <button class="btn btn-primary" type="submit">Enviar</button>
+                <button class="btn btn-outline-secondary" type="reset" id="btnLimpiar">Limpiar</button>
+                <button class="btn btn-outline-dark ms-auto" type="button" id="btnAlerta">
+                  Mostrar alerta
+                </button>
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- PREVIEW -->
+      <div class="col-12 col-lg-5">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h2 class="h5 mb-3">Vista previa</h2>
+            <ul class="list-group">
+              <li class="list-group-item d-flex justify-content-between">
+                <span>Nombre</span><strong id="pvNombre">—</strong>
+              </li>
+              <li class="list-group-item d-flex justify-content-between">
+                <span>Correo</span><strong id="pvEmail">—</strong>
+              </li>
+              <li class="list-group-item d-flex justify-content-between">
+                <span>Edad</span><strong id="pvEdad">—</strong>
+              </li>
+              <li class="list-group-item d-flex justify-content-between">
+                <span>País</span><strong id="pvPais">—</strong>
+              </li>
+            </ul>
+            <p class="text-muted small mt-3 mb-0">
+              La vista previa se actualiza mientras escribes.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
