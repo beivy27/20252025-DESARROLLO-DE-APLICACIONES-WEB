@@ -1,0 +1,18 @@
+/* Personalización propia (obligatoria) */
+.titulo-principal {
+  letter-spacing: 1px;
+  font-weight: 800;
+  border-left: 6px solid #ffc107; /* toque personal */
+  padding-left: 12px;
+}
+
+/* Ajuste visual del carrusel */
+.carousel-item img {
+  height: 360px;
+  object-fit: cover;
+}
+
+/* Formulario: mejora visual */
+#contactForm {
+  border: 1px solid rgba(0,0,0,0.06);
+}
