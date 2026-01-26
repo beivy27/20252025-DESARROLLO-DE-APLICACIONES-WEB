@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Semana 8 - Bootstrap + JavaScript</title>
+
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- CSS propio -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- ===== NAVBAR / ENCABEZADO ===== -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#">MiPágina</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menuNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link active" href="#inicio">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#productos">Productos</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container py-4" id="inicio">
+      <h1 class="titulo-principal">Creación de una Página Web Interactiva</h1>
+      <p class="text-muted mb-0">
+        Bootstrap para diseño responsivo + JavaScript para interactividad y validación.
+      </p>
+    </div>
+  </header>
+
+  <!-- ===== CONTENIDO PRINCIPAL ===== -->
+  <main class="container pb-5">
+
+    <!-- BOTÓN ALERTA -->
+    <section class="mb-4">
+      <div class="d-flex flex-wrap gap-2 align-items-center">
+        <button id="btnAlerta" class="btn btn-warning">
+          Mostrar alerta
+        </button>
+        <span class="text-muted">Interactividad con JavaScript.</span>
+      </div>
+    </section>
+
+    <!-- CARRUSEL -->
+    <section class="mb-5">
+      <h2 class="h4 mb-3">Carrusel de Imágenes</h2>
+
+      <div id="carouselExample" class="carousel slide shadow-sm rounded overflow-hidden" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active"></button>
+          <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2"></button>
+        </div>
+
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="img/slide1.jpg" class="d-block w-100" alt="Slide 1">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Diseño responsivo</h5>
+              <p>Bootstrap adapta la interfaz a móvil y escritorio.</p>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img src="img/slide2.jpg" class="d-block w-100" alt="Slide 2">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Componentes listos</h5>
+              <p>Navbar, carrusel, tablas y formularios.</p>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img src="img/slide3.jpg" class="d-block w-100" alt="Slide 3">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Interactividad</h5>
+              <p>Validación y alertas usando JavaScript.</p>
+            </div>
+          </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+          <span class="visually-hidden">Siguiente</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- TABLA PRODUCTOS -->
+    <section class="mb-5" id="productos">
+      <h2 class="h4 mb-3">Tabla de Productos (datos ficticios)</h2>
+
+      <div class="table-responsive">
+        <table class="table table-striped table-hover align-middle shadow-sm">
+          <thead class="table-dark">
+            <tr>
+              <th>#</th>
+              <th>Producto</th>
+              <th>Categoría</th>
+              <th>Precio</th>
+              <th>Stock</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Teclado Mecánico</td>
+              <td>Accesorios</td>
+              <td>$45.00</td>
+              <td>12</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Mouse Inalámbrico</td>
+              <td>Accesorios</td>
+              <td>$18.50</td>
+              <td>30</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Audífonos</td>
+              <td>Audio</td>
+              <td>$29.99</td>
+              <td>20</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Memoria USB 64GB</td>
+              <td>Almacenamiento</td>
+              <td>$12.00</td>
+              <td>50</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- FORMULARIO CONTACTO -->
+    <section id="contacto">
+      <h2 class="h4 mb-3">Formulario de Contacto</h2>
+
+      <div id="msgForm" class="alert d-none" role="alert"></div>
+
+      <form id="contactForm" novalidate class="p-4 bg-white shadow-sm rounded">
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre *</label>
+          <input type="text" id="nombre" class="form-control" placeholder="Ej: Juan Pérez" />
+          <div class="invalid-feedback" id="errorNombre"></div>
+        </div>
+
+        <div class="mb-3">
+          <label for="correo" class="form-label">Correo electrónico *</label>
+          <input type="email" id="correo" class="form-control" placeholder="Ej: correo@ejemplo.com" />
+          <div class="invalid-feedback" id="errorCorreo"></div>
+        </div>
+
+        <div class="mb-3">
+          <label for="mensaje" class="form-label">Mensaje *</label>
+          <textarea id="mensaje" class="form-control" rows="4" placeholder="Escribe tu mensaje..."></textarea>
+          <div class="invalid-feedback" id="errorMensaje"></div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+          Enviar
+        </button>
+      </form>
+    </section>
+  </main>
+
+  <!-- ===== PIE DE PÁGINA ===== -->
+  <footer class="bg-dark text-light py-4 mt-4">
+    <div class="container text-center">
+      <p class="mb-1">Contacto: mipagina@correo.com | +593 000 000 000</p>
+      <p class="mb-0">
+        Sígueme:
+        <a class="link-light text-decoration-none" href="#">Facebook</a> ·
+        <a class="link-light text-decoration-none" href="#">Instagram</a> ·
+        <a class="link-light text-decoration-none" href="#">X</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS (Bundle) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- JS propio -->
+  <script src="script.js"></script>
+</body>
+</html>
